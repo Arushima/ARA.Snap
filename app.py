@@ -30,28 +30,58 @@ sinput='''You have perfect vision and pay great attention to detail which makes 
     Return only the full code in <html></html> tags.'''
 def stream_code(llm,image,input=sinput):
     res=llm.generate_content([input,image],stream=True,generation_config={"max_output_tokens":4096})
-    for chunk in res:
-        # generated_code=generated_code+chunk.candidates[0].content.parts[0].text
-        yield chunk.candidates[0].content.parts[0].text
-def open_html():
-    webbrowser.open("data2/index.html")
+    with open("data2/vision.html", "w", encoding= "utf-8")as file:
+
+        for chunk in res:
+            # generated_code=generated_code+chunk.candidates[0].content.parts[0].text
+            file.write(chunk.candidates[0].content.parts[0].text)
+            yield chunk.candidates[0].content.parts[0].text
+def show_html():
+    with open("data2/index.html", "r", encoding="utf-8") as file:
+        return file.read()
 # Set up the Streamlit app
 st.set_page_config("ARA_Snap", page_icon="random", layout="wide")
-st.title("Simple Chat Interface")
+st.title("LandScape AI")
 tab1, tab2=st.tabs(["Vision2Code", "Prompt2Code"])
 
 with tab1:
-    uploaded_file = st.file_uploader("Choose an Image file", accept_multiple_files=False, type=["jpg", "png"])
+    uploaded_file = st.file_uploader("Choose an Image file (sample picture or hand drawn layout)", accept_multiple_files=False, type=["jpg", "png"])
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
         st.image(image, caption="Uploaded Image", use_container_width =True)
         generate = st.button("Generate!")
         if generate:
             st.write_stream(stream_code(llm,image))
+    else:
+        st.markdown("""# Project Submission Details
+
+### *Project Description:*
+- *Project Title:* A.R.A Snap
+- *Objective:*  
+  The primary objective of this project is to revolutionize the hiring process by automating job posting creation and providing a comprehensive resume analysis against job requirements. This system aims to enhance candidate preparation for interviews by generating detailed reports highlighting strengths, weaknesses, and areas for improvement.  
+
+- *Overview:*  
+  This project leverages cutting-edge *Magnetic AI Technology* and *Gemini LLM* to streamline recruitment and candidate evaluation. The system automatically creates tailored job postings, matches candidate resumes against these postings, and provides insightful feedback. Key functionalities include:  
+  - Automated job posting generation based on industry standards.  
+  - Detailed candidate resume analysis with gap identification.  
+  - Comprehensive interview preparation reports for candidates, including skill alignment and improvement suggestions.  
+  - Utilization of advanced natural language understanding for precise job-resume matching.  
+
+  By combining innovative AI technologies, this solution ensures efficiency for recruiters and better preparation for candidates, ultimately enhancing the hiring experience.
+### *Project Created By:*
+| *Name*          | *Roll Number* | *Email Address*               |
+|--------------------|-----------------|---------------------------------|
+| Arushima Chauhan   | 21BCON239       | arushima.21bcon239@jecrcu.edu.in|
+| Akansha Bhargava   | 21BCON346       | cherry.21bcon346@jrcrcu.edu.in  |
+| Akansha Bhargava   | 21BCON346       | cherry.21bcon346@jrcrcu.edu.in  |
+
+- *Name of Mentor:* Shivangi 
+- *Submitted To:* Dr.Ravi Kumar Sharma  
+ """)
 
 
 with tab2:
-    prompt=st.text_input('Enter some text')
+    prompt=st.text_input('Enter the prompt to generate your landing page', placeholder="eg. ad for a recruiting agency looking for actors, use appropriate colours and font styles")
 
     b=st.button('generate code') 
     if b:
@@ -60,12 +90,7 @@ with tab2:
         with st.spinner(text='In progress'):
             shit=get_code(prompt)
             st.success('Done')
-            st.markdown(shit)
-        
-        c=st.button("Click to view landing page")
-        if c:
-            st.write("hair")
-            open_html()
-        st.markdown(f'[Open HTML Page](file://{os.path.abspath("data2/index.html")})', unsafe_allow_html=True)
+        html_code=show_html()
+        st.code(html_code, language="html")
         st.balloons()
         st.toast('TADA!!!!')

@@ -1,20 +1,22 @@
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    background-color: #F5F5DC; /* Beige background */
+    color: #333333; /* Dark Gray text */
 }
 
 .container {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px 0;
 }
 
 header {
-    background-color: #F5F5DC;
-    padding: 1em 0;
+    background-color: #A0522D; /* Brown header */
+    color: #F5F5DC; /* Beige text */
+    padding: 10px 0;
 }
 
 header .container {
@@ -25,158 +27,143 @@ header .container {
 
 header h1 {
     margin: 0;
-    font-family: 'Playfair Display', serif;
-    color: #A67C52;
+    font-family: "Playfair Display", serif; /* Playfair Display for header */
 }
 
 nav a {
+    color: #F5F5DC; /* Beige text */
     text-decoration: none;
-    color: #A67C52;
     margin-left: 20px;
 }
 
 .hero {
-    background-image: url('https://picsum.photos/1200/600?random=3');
+    background-image: url("https://picsum.photos/1200/600?random=5");
     background-size: cover;
     background-position: center;
-    color: #fff;
+    color: #F5F5DC; /* Beige text on hero background*/
     text-align: center;
-    padding: 10em 0;
+    padding: 100px 0;
 }
 
-.hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2em;
-    display: inline-block;
-}
-
-.hero h1 {
+.hero-content h2 {
     font-size: 3em;
-    margin-bottom: 0.5em;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif; /* Playfair Display for hero heading */
+    margin-bottom: 20px;
 }
 
-.hero p {
+.hero-content p {
     font-size: 1.2em;
-    margin-bottom: 2em;
-}
-
-.hero button {
-    background-color: #B8860B;
-    color: #fff;
-    padding: 1em 2em;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
+    margin-bottom: 30px;
 }
 
 .about {
-    padding: 4em 0;
-    background-color: #F5F5DC;
-}
-
-.about .container {
+    padding: 50px 0;
     display: flex;
     align-items: center;
-    gap: 2em;
+    gap: 20px;
 }
 
-.about img {
-    max-width: 45%;
-    border-radius: 8px;
+.about-content{
+  flex: 1;
 }
 
-.about-text {
-    flex: 1;
+.about-image {
+  max-width: 400px;
 }
 
-.about h2 {
-    font-family: 'Playfair Display', serif;
-    color: #A67C52;
-    margin-bottom: 0.8em;
+.about h3 {
+    font-family: "Playfair Display", serif; /* Playfair Display for about heading */
+    margin-bottom: 20px;
 }
 
 .menu {
-    padding: 4em 0;
+    background-color: #f0f0f0;
+    padding: 50px 0;
 }
 
-.menu h2 {
-     font-family: 'Playfair Display', serif;
-    color: #A67C52;
+.menu h3 {
+    font-family: "Playfair Display", serif; /* Playfair Display for menu heading */
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 30px;
 }
 
 .menu-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px
 }
 
 .menu-item {
-    background-color: #fff;
-    padding: 1.5em;
+    text-align: center;
+    width: 30%;
+    background-color: white;
+    padding: 15px;
     border-radius: 8px;
+}
+
+.menu-item img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.menu-item h4 {
+  font-family: "Playfair Display", serif;
+}
+
+.cta {
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 50px 0;
 }
 
-.menu-item h3 {
-    font-size: 1.2em;
-    margin-bottom: 0.5em;
+.cta h3 {
+    font-family: "Playfair Display", serif; /* Playfair Display for cta heading */
+    margin-bottom: 20px;
 }
 
-.testimonial {
-    background-color: #f9f9f9;
-    padding: 4em 0;
-    text-align: center;
-}
-
-.testimonial img {
-    border-radius: 50%;
-    margin-bottom: 1em;
+.cta-button {
+    display: inline-block;
+    background-color: #E67E22; /* Orange button */
+    color: #F5F5DC; /* Beige text */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 footer {
-    background-color: #A67C52;
-    color: #fff;
-    padding: 1em 0;
+    background-color: #A0522D; /* Brown footer */
+    color: #F5F5DC; /* Beige text */
     text-align: center;
-}
-
-footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
+    padding: 20px 0;
 }
 
 @media (max-width: 768px) {
     .container {
         width: 95%;
     }
-    header .container, .about .container, footer .container{
+
+    header .container {
         flex-direction: column;
         text-align: center;
     }
-    header nav {
-      margin-top: 10px; 
-   }
-   header nav a{
-      margin: 0 10px;
-   }
-   .about img {
-        max-width: 100%;
-   }
-   .about-text{
-     text-align: center;
-   }
-    footer .social-media{
-      margin-top: 10px;
+
+    nav a {
+        margin: 10px 10px;
+    }
+
+    .about {
+      flex-direction: column;
+    }
+
+    .about-image {
+      max-width: 100%;
+    }
+    .menu-items {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .menu-item {
+      width: 80%;
     }
 }
