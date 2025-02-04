@@ -19,7 +19,7 @@ sinput='''You have perfect vision and pay great attention to detail which makes 
     - Do not add comments in the code such as "<!-- Add other navigation links as needed -->" and "<!-- ... other news items ... -->" in place of writing the full code. WRITE THE FULL CODE.
     - Make sure to always get the layout right (if things are arranged in a row in the screenshot, they should be in a row in the app as well)
     - Repeat elements as needed to match the screenshot. For example, if there are 15 items, the code should have 15 items. DO NOT LEAVE comments like "<!-- Repeat for each news item -->" or bad things will happen.
-    - For images, use placeholder images from https://placehold.co and include a detailed description of the image in the alt text so that an image generation AI can generate the image later.
+    - For images, use placeholder images from https://picsum.photos and include a detailed description of the image in the alt text so that an image generation AI can generate the image later.
 
     In terms of libraries,
 
@@ -58,25 +58,28 @@ with tab1:
 ### *Project Description:*
 - *Project Title:* A.R.A Snap
 - *Objective:*  
-  The primary objective of this project is to revolutionize the hiring process by automating job posting creation and providing a comprehensive resume analysis against job requirements. This system aims to enhance candidate preparation for interviews by generating detailed reports highlighting strengths, weaknesses, and areas for improvement.  
-
+  A.R.A Snap automates landing page creation using AI-driven agents, generating structured, responsive, and visually appealing designs from user prompts or images with minimal effort.
 - *Overview:*  
-  This project leverages cutting-edge *Magnetic AI Technology* and *Gemini LLM* to streamline recruitment and candidate evaluation. The system automatically creates tailored job postings, matches candidate resumes against these postings, and provides insightful feedback. Key functionalities include:  
-  - Automated job posting generation based on industry standards.  
-  - Detailed candidate resume analysis with gap identification.  
-  - Comprehensive interview preparation reports for candidates, including skill alignment and improvement suggestions.  
-  - Utilization of advanced natural language understanding for precise job-resume matching.  
+  This system leverages Agentic AI Technology and Gemini LLM to streamline web development. It breaks down the design process into specialized agents, ensuring high-quality HTML, CSS, and JavaScript generation. With AI-powered requirement analysis, web search, and content generation, A.R.A Snap simplifies landing page creation while maintaining design consistency and efficiency.
+   Key functionalities include:
 
-  By combining innovative AI technologies, this solution ensures efficiency for recruiters and better preparation for candidates, ultimately enhancing the hiring experience.
+- **AI-powered landing page generation** from textual prompts or reference images.  
+- **Automated web search** for gathering design inspiration.  
+- **Structured HTML, CSS, and JavaScript code generation** using AI.  
+- **Integrated quality assurance** for debugging and performance validation.  
+- **User-friendly Streamlit interface** for seamless interaction.  
+
+ By combining generative AI, structured workflows, and automation, A.R.A Snap significantly reduces development time while ensuring professional, high-quality landing pages.
+
 ### *Project Created By:*
 | *Name*          | *Roll Number* | *Email Address*               |
 |--------------------|-----------------|---------------------------------|
 | Arushima Chauhan   | 21BCON239       | arushima.21bcon239@jecrcu.edu.in|
-| Akansha Bhargava   | 21BCON346       | cherry.21bcon346@jrcrcu.edu.in  |
-| Akansha Bhargava   | 21BCON346       | cherry.21bcon346@jrcrcu.edu.in  |
+| Akansha Bhargava   | 21BCON244       | akansha.21bcon244@jecrcu.edu.in |
+| Ruchika Choudhary  | 22BCON1107      | ruchika.22bcom1017@jecrcu.edu.in|
 
-- *Name of Mentor:* Shivangi 
-- *Submitted To:* Dr.Ravi Kumar Sharma  
+- *Name of Mentor:*  Dr. Shivangi Dheer 
+- *Submitted To:* Dr. Shashi Sharma  
  """)
 
 
@@ -94,3 +97,4 @@ with tab2:
         st.code(html_code, language="html")
         st.balloons()
         st.toast('TADA!!!!')
+
